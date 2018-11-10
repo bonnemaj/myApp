@@ -13,6 +13,12 @@ export class ShoppingCart extends React.Component {
                     <ShoppingCartItem title='Hamburger' price={3.36} numberOfItems={4} description={'Meaty'} />
                 </div>
                 <ShoppingCartCoupon />
+                <ShoppingCartCost amount={9.32} />
+                <div id='payment-wrapper'>
+                    <div id='payment-button'>
+                        <span>AFREKENEN</span>
+                    </div>
+                </div>
             </React.Fragment>
         );
     }
@@ -49,10 +55,23 @@ export class ShoppingCartItem extends React.Component {
 export class ShoppingCartCoupon extends React.Component {
     render () {
         return (
-            <div id="coupon-payment-wrapper">
+            <div id='coupon-payment-wrapper'>
                 <label>COUPON</label>
-                <input id="coupon-field" type="text" />
-                <input id="coupon-submit" type="button" value="Toevoegen"/>
+                <input id='coupon-field' type='text' />
+                <input id='coupon-submit' type='button' value='Toevoegen'/>
+            </div>
+        );
+    }
+}
+
+export class ShoppingCartCost extends React.Component {
+    render () {
+        return (
+            <div id='total-cost-div'>
+                <label>TOTAAL</label>
+                <div>
+                    <span>${this.props.amount}</span>
+                </div>
             </div>
         );
     }

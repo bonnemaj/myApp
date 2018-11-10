@@ -722,9 +722,10 @@ a {
 
 #coupon-payment-wrapper{
     height:2em;
-    background-color: white;
+    background-color: #ebebeb;
     padding: 20px;
-    border-bottom: 2px solid #473f3f;
+    border-bottom: 1px solid #bfbfbf;
+    border-top: 1px solid #bfbfbf;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -745,36 +746,32 @@ a {
 
 #coupon-field{
     width:30%;
-    padding: 12px 20px;
-    /*margin: 8px 0px;*/
     box-sizing: border-box;
     color:#018e5a;
-    font-size:3em;
+    border: 1px solid #bfbfbf;
 }
 
 #coupon-submit{
     width:30%;
-    padding:12px 20px;
     margin: 8px 0px;
     box-sizing: border-box;
-    font-size: 3em;
     background-color:#473f3f;
     color:white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 #total-cost-div{
     width:100%;
-    margin-top:100px;
-    padding-left: 100px;
-    padding-right: 100px;
+    margin-top: 2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #total-cost-div label{
     width:40%;
     color: #000000;
-    font-size:3em;
 }
 
 #total-cost-div div{
@@ -784,7 +781,6 @@ a {
 
 #total-cost-div div span{
     color: #000000;
-    font-size:3em;
 }
 
 
@@ -793,7 +789,7 @@ PAYMENT WRAPPER
  */
 
 #payment-wrapper{
-    font-size:3em;
+    font-size: 1em;
     color:white;
 }
 
@@ -801,12 +797,13 @@ PAYMENT WRAPPER
     display:flex;
     justify-content: center;
     width:80%;
-    margin-top: 100px;
+    margin-top: 1.5em;
     margin-left:auto;
     margin-right:auto;
     background-color:#018e5a;
-    height:100px;
-    box-shadow: 5px 10px 6px #888888;
+    height: 3em;
+    border-radius: 3px;
+    box-shadow: 2px 5px 7px #888888;
 }
 
 #payment-button:active{
