@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import Categories from '../containers/Categories';
-import FoodItem from '../components/FoodItem';
+import FoodItem from '../containers/FoodItem';
 import Nav from '../containers/Nav';
 
 export class CategoryRouter extends React.Component {

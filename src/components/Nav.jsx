@@ -14,7 +14,6 @@ export class Nav extends React.Component {
     }
 
     changeMenuState(newState) {
-        console.log('CHanging the state: ', !this.menuState);
         this.setState({
             menuState: newState
         })
@@ -55,7 +54,7 @@ export class NavHeader extends React.Component {
                 </div>
                 
                 <div id='header-storeCart-Div' className='header-button'>
-                    <NavLink to='uitchecken'>
+                    <NavLink to='/uitchecken'>
                         <img src='../images/shoppingcart.png' alt='' />
                     </NavLink>
                 </div>
@@ -89,7 +88,6 @@ export class NavMenu extends React.Component {
     }
 
     handleClickOutside(event) {
-        console.log(this.props.ref)
         if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.props.menuState) {
           this.props.changeMenuState(false)
         }

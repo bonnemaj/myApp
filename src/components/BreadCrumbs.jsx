@@ -20,8 +20,6 @@ export class BreadCrumbs extends React.Component {
                 )
             }
         );
-        console.log(toNavigate.get(0));
-        console.log('This is the location: ', this.props.locations);
 
         return (
             <nav className='breadcrumbs'>

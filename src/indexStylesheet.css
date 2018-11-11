@@ -616,6 +616,7 @@ a {
 .food-info-wrapper{
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3em;
     width:80%;
 }
 
@@ -939,9 +940,22 @@ PAYMENT WRAPPER
     font-weight: 500;
 }
 
+/* CSS order modifier */
+.order__footer {
+    height: 3.7em;
+    display: flex;
+    align-items: center;
+    background-color: #efefef;
+    border-top: 1px solid #bfbfbf;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
 .order-modifier {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .order-modifier__button {
@@ -950,6 +964,17 @@ PAYMENT WRAPPER
     border-radius: 1px;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.order-modifier__button--modify {
+    width: 2em;
+    height: 2em;
+}
+
+.order-modifier__input {
+    border: 1px solid #bfbfbf;
+    padding-left: 6px;
 }
 
 /*New

@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 
 export class Categories extends React.Component {
     render() {
-        console.log(this.props);
         return (
             <React.Fragment>
                 <div id='category-filters-container'>
@@ -24,7 +23,7 @@ export class Categories extends React.Component {
                 <div className='category-wrapper'>
                     <div className='two-items-wrapper'>
                         <CategoriesItem title='Bier' imgSource='images/amstelBier.png' location={this.props.location} />
-                        <CategoriesItem title='Burgers' imgSource='images/burger.png' location={this.props.location} />
+                        <CategoriesItem title='hamburger' imgSource='images/burger.png' location={this.props.location} />
                     </div>
                 </div>
             </React.Fragment>
@@ -34,9 +33,7 @@ export class Categories extends React.Component {
 
 class CategoriesItem extends React.Component {
     render() {
-        // <img src={this.props.imgSource} />
         return (
-            
             <div className='category-item'>
                 <NavLink to={this.props.location.pathname + '/' + this.props.title.toLowerCase()}>
                 <div className='category-item__img'>

@@ -2,8 +2,23 @@ import React from 'react';
 import BreadCrumbs from './BreadCrumbs';
 import { Button } from './Button';
 
+import {List} from 'immutable';
+
 export class FoodItem extends React.Component {
+    state = {
+        loading: true
+    }
+
+    componentDidMount () {
+        const toNavigate = List(this.props.location.pathname.split('/')).delete(0)
+        this.props.loadItem(toNavigate.get(toNavigate.size - 1))
+        this.setState({loading: false})
+    }
+
     render() {
+        if (this.state.loading)
+            return null;
+
         return (
             <React.Fragment>
                 <div className='scrollable-div'>
@@ -72,8 +87,8 @@ class FoodItemAllergens extends React.Component {
         return (
             <React.Fragment>
                 <div className='info-button-wrapper'>
-                    <div class='button-div' id='allergy-info-div' onClick={this.handleClick}>
-                        <div class='inner-button-div' id='allergy-info-button'>
+                    <div className='button-div' id='allergy-info-div' onClick={this.handleClick}>
+                        <div className='inner-button-div' id='allergy-info-button'>
                             <span>ALLERGENEN</span>
                         </div>
                     </div>
@@ -102,14 +117,34 @@ class FoodItemAllergens extends React.Component {
 }
 
 class FoodItemAmountButtons extends React.Component {
+    state = {
+        amount: 1
+    }
+
+    constructor (props) {
+        super(props)
+
+        this.handleIncrement = this.handleIncrement.bind(this);
+        this.handleDecrement = this.handleDecrement.bind(this);
+    }
+
+    handleIncrement () {
+        this.setState({amount: this.state.amount + 1})
+    }
+
+    handleDecrement () {
+        if (this.state.amount > 1)
+            this.setState({amount: this.state.amount - 1})
+    }
+
     render () {
         return (
-            <div id='footer-Order'>
-                <div class='order-modifier'>
-                        <Button className='order-modifier__button' label='-' />
-                        <input name='quantity' id='input-add-to-cart' type='number' min='1' max='5' value='0' />
-                        <Button className='button-add-to-cart' label='+' />
-                        <Button label='Toevoegen' />
+            <div className='order__footer'>
+                <div className='order-modifier'>
+                        <Button className='order-modifier__button order-modifier__button--modify' label='-' onClick={this.handleDecrement} />
+                        <input className='order-modifier__input' name='quantity' type='number' value={this.state.amount} />
+                        <Button className='order-modifier__button order-modifier__button--modify' label='+' onClick={this.handleIncrement} />
+                        <Button label='Toevoegen' className='order-modifier__button' />
                 </div>
             </div>
         );
