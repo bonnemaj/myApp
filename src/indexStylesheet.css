@@ -445,7 +445,7 @@ body{
 }
 
 #text-wrapper-div span{
-    font-size:1.2em;
+    font-size: 0.8em;
 }
 
 .my-carousel {
@@ -607,36 +607,36 @@ a {
     width:80%;
 }
 
-#text-wrapper-div span{
-    font-size:1.2em;
-}
-
 /**
 
     FOOD/allergenes info
 
  */
 
-#food-info-wrapper{
-    padding:15px;
-    width:100%;
+.food-info-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
 }
 
 #food-info-container{
     background-color:#efefef;
     padding:10px 0 10px 20px;
-    font-size:2rem;
-    border:1px solid #473f3f;
+    font-size:1rem;
+    border:1px solid #bfbfbf;
+    border-radius: 3px;
 }
 
 #food-info-container label{
-    width:45%;
+    width:60%;
     display:inline-block;
+    margin-top: 7px;
 }
 
 #food-info-container span{
-    width:50%;
+    width:30%;
     display:inline-block;
+    margin-top: 7px;
 }
 
 
@@ -649,7 +649,7 @@ a {
 }
 
 .button-div{
-    height:150px;
+    height: 3.5em;
     margin-top:30px;
     width:80%;
     margin-left: auto;
@@ -661,7 +661,9 @@ a {
     height: 80%;
     display: flex;
     justify-content: center;
-    box-shadow: 4px 10px 6px #666;
+    cursor: pointer;
+    box-shadow: 2px 5px 7px #666;
+    border-radius: 3px;
 }
 
 .inner-button-div:active{
@@ -670,10 +672,14 @@ a {
 
 .inner-button-div span{
     color: white;
-    font-size: 3em;
+    font-size: 1.2em;
     margin-top:auto;
     margin-bottom:auto;
     font-weight: 700;
+}
+
+.hidden {
+    display: none;
 }
 
 
@@ -918,7 +924,12 @@ PAYMENT WRAPPER
     font-size: 2em;
 }
 
-/*New*/
+.scrollable-div {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+
 #item-price-image {
     position: absolute;
     bottom: 50px;
@@ -928,39 +939,52 @@ PAYMENT WRAPPER
     font-weight: 500;
 }
 
+.order-modifier {
+    display: flex;
+    justify-content: space-around;
+}
 
+.order-modifier__button {
+    background-color: #008e5a;
+    border: 1px solid #007a4e;
+    border-radius: 1px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/*New
 .button-add-to-cart {
-    background-color: #008e5a; /* Green */
+    background-color: #008e5a; /* Green 
     border: none;
     color: white;
-    /*padding: 55px 65px;*/
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2em;
+    font-size: 1em;
+    height: 3em;
+    width: 3em;
 }
 
 #input-add-to-cart {
-    /*background-color: #008e5a; !* Green *!*/
+    /*background-color: #008e5a; !* Green *!
     border: none;
-    color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 3em;
-    font-weight: 700;
+    font-size: 1em;
+    font-weight: bold;
 
 }
 
-#add-to-cart-div {
+/*#add-to-cart-div {
     /*position: absolute;*/
     /*left: 80%;*/
-    /*margin-top: 5%;*/
+    /*margin-top: 5%;
 }
 
 
 #button-inc_dec {
-    background-color: #008e5a; /* Green */
+    background-color: #008e5a;
     border: none;
     color: white;
     padding: 20% 20%;
@@ -974,15 +998,9 @@ PAYMENT WRAPPER
     border-top: 5px solid gray;
 }
 
-#scrollable-div {
-
-    max-height: 80vh;
-    overflow:scroll;
-
-}
 
 .Inc-desc-buttons {
-    /*position: absolute;*/
+    /*position: absolute;
     display: flex;
     justify-content: left;
 
@@ -993,6 +1011,7 @@ PAYMENT WRAPPER
     padding: 35px 65px;
 }
 
-#inc_desc {
-    padding: 55px 65px;
-}
+#Itemtitle {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}*/

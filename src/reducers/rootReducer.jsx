@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux-immutable';
 
-export const rootReducer = combineReducers({})
+import ShoppingCartReducer from './ShoppingCartReducer';
+
+export const rootReducer = combineReducers({
+    ShoppingCartReducer
+})

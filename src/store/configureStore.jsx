@@ -7,6 +7,6 @@ import { rootReducer } from '../reducers/rootReducer';
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export const configureStore = (): Store<{}> => {
+export const configureStore = () => {
   return createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
 };
