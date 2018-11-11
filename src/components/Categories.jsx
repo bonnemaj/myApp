@@ -22,8 +22,8 @@ export class Categories extends React.Component {
                 <BreadCrumbs locations={this.props.location} />
                 <div className='category-wrapper'>
                     <div className='two-items-wrapper'>
-                        <CategoriesItem title='Bier' imgSource='images/amstelBier.png' location={this.props.location} />
-                        <CategoriesItem title='hamburger' imgSource='images/burger.png' location={this.props.location} />
+                        <CategoriesItem title='Bier' imgSource='images/bier.png' location={this.props.location} />
+                        <CategoriesItem title='hamburger' imgSource='images/hamburger.png' location={this.props.location} />
                     </div>
                 </div>
             </React.Fragment>

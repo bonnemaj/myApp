@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
     popularItems: List([
         Map({name: 'Hamburger', img: 'images/hamburgermc.jpg', url: ''}),
         Map({name: 'Pizzapunt', img: 'images/pizzapunt.png', url: ''}),
-        Map({name: '0.5L Bier', img: 'images/amstelBier.png', url: ''})
+        Map({name: '0.5L Bier', img: 'images/bier.png', url: ''})
     ]),
     newItems: List([
         Map({name: 'Groente', img: 'images/vegetables.jpg', url: ''}),

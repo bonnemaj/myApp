@@ -665,6 +665,7 @@ a {
     cursor: pointer;
     box-shadow: 2px 5px 7px #666;
     border-radius: 3px;
+    margin-bottom: 3em;
 }
 
 .inner-button-div:active{
@@ -976,67 +977,3 @@ PAYMENT WRAPPER
     border: 1px solid #bfbfbf;
     padding-left: 6px;
 }
-
-/*New
-.button-add-to-cart {
-    background-color: #008e5a; /* Green 
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    height: 3em;
-    width: 3em;
-}
-
-#input-add-to-cart {
-    /*background-color: #008e5a; !* Green *!
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-
-}
-
-/*#add-to-cart-div {
-    /*position: absolute;*/
-    /*left: 80%;*/
-    /*margin-top: 5%;
-}
-
-
-#button-inc_dec {
-    background-color: #008e5a;
-    border: none;
-    color: white;
-    padding: 20% 20%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.5em;
-}
-
-#footer-Order{
-    border-top: 5px solid gray;
-}
-
-
-.Inc-desc-buttons {
-    /*position: absolute;
-    display: flex;
-    justify-content: left;
-
-}
-
-#addToCart {
-    margin-left: 15%;
-    padding: 35px 65px;
-}
-
-#Itemtitle {
-    margin-top: 6px;
-    margin-bottom: 6px;
-}*/

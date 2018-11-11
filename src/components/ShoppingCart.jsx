@@ -1,19 +1,37 @@
 import React from 'react';
 
+import { List } from 'immutable';
+
 import Nav from '../containers/Nav';
 import BreadCrumbs from '../components/BreadCrumbs';
 
 export class ShoppingCart extends React.Component {
     render() {
+        let totalPrice = 0;
+        const displayItems = this.props.contents.map(
+            (value, key) =>  {
+                totalPrice += value * this.props.itemInfo.getIn(List([key, 'price']));
+                return (
+                    <ShoppingCartItem
+                        key={'shoppingCartItem' + key}
+                        title={this.props.itemInfo.getIn(List([key, 'title']))}
+                        price={this.props.itemInfo.getIn(List([key, 'price']))}
+                        numberOfItems={value}
+                        description={'Meaty'}
+                    />
+                )
+            }
+        );
+
         return (
             <React.Fragment>
                 <Nav />
                 <BreadCrumbs locations={this.props.location} />
                 <div id='orders-wrapper'>
-                    <ShoppingCartItem title='Hamburger' price={3.36} numberOfItems={4} description={'Meaty'} />
+                    {(displayItems.size > 0) ? displayItems.valueSeq() : <h3 className='shopping-cart__empty'>U heeft nog niks toegevoegd</h3>}
                 </div>
                 <ShoppingCartCoupon />
-                <ShoppingCartCost amount={9.32} />
+                <ShoppingCartCost amount={totalPrice} />
                 <div id='payment-wrapper'>
                     <div id='payment-button'>
                         <span>AFREKENEN</span>
@@ -25,16 +43,22 @@ export class ShoppingCart extends React.Component {
 }
 
 export class ShoppingCartItem extends React.Component {
+    constructor (props) {
+        super(props);
+
+        
+    }
+
     render () {
         return (
-            <div class='order'>
-                <div class='image-and-text'>
-                    <div class='order-image-wrapper'>
-                        <img class='order-image' src='../images/burger.png' />
+            <div className='order'>
+                <div className='image-and-text'>
+                    <div className='order-image-wrapper'>
+                        <img className='order-image' src={'../images/' + this.props.title + '.png'} />
                     </div>
-                    <div class='order-image-text'>
-                        <h3 class='ShoppingCartItemTitle'>{this.props.title}</h3>
-                        <h3 class='ShoppingCartItemTitle'>€{this.props.price}-</h3>
+                    <div className='order-image-text'>
+                        <h3 className='ShoppingCartItemTitle'>{this.props.title}</h3>
+                        <h3 className='ShoppingCartItemTitle'>€{this.props.price}-</h3>
                         <label>Aantal:</label>
                         <span>{this.props.numberOfItems}</span>
                         <label>Soort:</label>
@@ -43,9 +67,9 @@ export class ShoppingCartItem extends React.Component {
                         <span>Ja</span>
                     </div>
                 </div>
-                <div class='OrderammountDiv'>
-                    <button class='OrderammountButton' id='buttonRemove'><span class='glyphicon glyphicon-trash'></span>   Verwijder  Artikel</button>
-                    <input class='OrderammountButton' id='buttonAmmount' value={this.props.numberOfItems} />
+                <div className='OrderammountDiv'>
+                    <button className='OrderammountButton' id='buttonRemove'><span className='glyphicon glyphicon-trash'></span>   Verwijder  Artikel</button>
+                    <input className='OrderammountButton' id='buttonAmmount' value={this.props.numberOfItems} />
                 </div>
             </div>
         );
@@ -70,7 +94,7 @@ export class ShoppingCartCost extends React.Component {
             <div id='total-cost-div'>
                 <label>TOTAAL</label>
                 <div>
-                    <span>${this.props.amount}</span>
+                    <span>&euro;{this.props.amount}</span>
                 </div>
             </div>
         );

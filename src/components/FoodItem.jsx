@@ -23,17 +23,25 @@ export class FoodItem extends React.Component {
             <React.Fragment>
                 <div className='scrollable-div'>
                     <BreadCrumbs locations={this.props.location} />
-                    <FoodItemImage price={2.54} />
-                    <FoodItemDetails foodName='HAMBURGER' />
-                    <div id='short-description-wrapper'>
-                        <div id='text-wrapper-div'>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-                        </div>
-                    </div>
+                    <FoodItemImage price={this.props.itemInfo.get('price')} title={this.props.itemInfo.get('title')} />
+                    <FoodItemDetails foodName={this.props.itemInfo.get('title').toUpperCase()} />
+                    <FoodItemDescription description={this.props.itemInfo.get('description')} />
                     <FoodItemAllergens />
                 </div>
-                <FoodItemAmountButtons />
+                <FoodItemAmountButtons addItem={this.props.addItemToShoppingCart} title={this.props.itemInfo.get('title')} />
             </React.Fragment>
+        );
+    }
+}
+
+class FoodItemDescription extends React.Component {
+    render () {
+        return (
+            <div id='short-description-wrapper'>
+                <div id='text-wrapper-div'>
+                    <span>{this.props.description}</span>
+                </div>
+            </div>
         );
     }
 }
@@ -43,7 +51,7 @@ class FoodItemImage extends React.Component {
         return (
             <div id='image-container-div'>
                 <div>
-                    <img id='item-image' src='../images/burger.png' />
+                    <img id='item-image' src={'../images/' + this.props.title + '.png'} />
                     <h3 id='item-price-image'>
                         <b>€{this.props.price}</b> <br/>
                         per stuk
@@ -126,6 +134,7 @@ class FoodItemAmountButtons extends React.Component {
 
         this.handleIncrement = this.handleIncrement.bind(this);
         this.handleDecrement = this.handleDecrement.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleIncrement () {
@@ -137,6 +146,10 @@ class FoodItemAmountButtons extends React.Component {
             this.setState({amount: this.state.amount - 1})
     }
 
+    handleSubmit () {
+        this.props.addItem(this.props.title, this.state.amount)
+    }
+
     render () {
         return (
             <div className='order__footer'>
@@ -144,7 +157,7 @@ class FoodItemAmountButtons extends React.Component {
                         <Button className='order-modifier__button order-modifier__button--modify' label='-' onClick={this.handleDecrement} />
                         <input className='order-modifier__input' name='quantity' type='number' value={this.state.amount} />
                         <Button className='order-modifier__button order-modifier__button--modify' label='+' onClick={this.handleIncrement} />
-                        <Button label='Toevoegen' className='order-modifier__button' />
+                        <Button label='Toevoegen' className='order-modifier__button' onClick={this.handleSubmit} />
                 </div>
             </div>
         );

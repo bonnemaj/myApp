@@ -1,12 +1,13 @@
 import FoodItem from '../components/FoodItem';
 import {connect} from 'react-redux';
 
-import { foodItems } from '../selectors/FoodSelector';
+import { getItemInfo } from '../selectors/FoodSelector';
 
 import { loadItem } from '../actions/foodItem';
+import { addItemToShoppingCart } from '../actions/shoppingCart';
 
-const mapStateToProps = state => {
-    return ({});
-};
+const mapStateToProps = state => ({
+    itemInfo: getItemInfo(state)
+});
 
-export default connect(mapStateToProps, {loadItem})(FoodItem);
+export default connect(mapStateToProps, {loadItem, addItemToShoppingCart})(FoodItem);
