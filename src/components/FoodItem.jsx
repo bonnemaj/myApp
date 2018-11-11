@@ -5,27 +5,45 @@ export class FoodItem extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='image-container-div'>
-                    <div>
-                        <img src='../images/burger.png' className='item-image' />
-                    </div>
-                </div>
                 <BreadCrumbs locations={this.props.location} />
-                <div id='add-remove-item-buttons-div'>
-                    <div id='add-remove-item-buttons-container'>
-                        <div id='increment-button-div'>
-                            <label>-</label>
-                        </div>
-                        <div id='input-field-items-div'>
-                            <input typ='number' />
-                        </div>
-                        <div id='button-decrement-div'>
-                            <label>+</label>
-                        </div>
+                <FoodItemImage price={2.54} />
+                <FoodItemDetails foodName='HAMBURGER' />
+                <div id="short-description-wrapper">
+                    <div id="text-wrapper-div">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
                     </div>
                 </div>
-
             </React.Fragment>
+        );
+    }
+}
+
+class FoodItemImage extends React.Component {
+    render () {
+        return (
+            <div id='image-container-div'>
+                <div>
+                    <img id='item-image' src='../images/burger.png' />
+                    <h3 id='item-price-image'>
+                        <b>€{this.props.price}</b> <br/>
+                        per stuk
+                    </h3>
+                </div>
+            </div>
+        );
+    }
+}
+
+class FoodItemDetails extends React.Component {
+    render () {
+        return (
+            <div id="add-remove-item-buttons-div">
+                <div id="add-remove-item-buttons-container">
+                    <div id="name-div">
+                        <h3 id="Itemtitle">{this.props.foodName}</h3>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

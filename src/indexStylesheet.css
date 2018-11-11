@@ -343,8 +343,7 @@ body{
 .category-item{
     width:45%;
     height: 175px;
-    border: 1px solid grey;
-    box-shadow: 3px 3px 5px #888888;
+    box-shadow: 1px 1px 1px #888888;
     float:left;
 }
 
@@ -381,18 +380,23 @@ body{
     header image
  */
 
- .image-container-div{
+ #image-container-div{
     margin-top:15px;
+    border-bottom: 1px solid black;
     display:flex;
     justify-content: center;
+    position: relative;
 }
 
-.image-container-div div{
-    width:75%;
+#image-container-div div{
+    /*display:flex;*/
+    /*justify-content: center;*/
+    width:90%;
 }
 
-.item-image{
-    width:100%;
+#item-image{
+    /*position: absolute;*/
+    width:80%;
 }
 
 
@@ -551,10 +555,9 @@ a {
 
 
 #add-remove-item-buttons-container{
-    padding:15px;
     display: flex;
-    justify-content: space-around;
-    font-size:5em;
+    justify-content: left;
+    font-size:1.5em;
 }
 
 #button-decrement-div{
@@ -857,9 +860,6 @@ PAYMENT WRAPPER
     /*font-size: 1em;*/
 }
 
-
-
-
 /***************************************EMPLOYEE PAGE *****************************************************************/
 
 #employee-header{
@@ -918,6 +918,81 @@ PAYMENT WRAPPER
     font-size: 2em;
 }
 
+/*New*/
+#item-price-image {
+    position: absolute;
+    bottom: 50px;
+    left: 80%;
+    font-size: .85em;
+    width: 15%;
+    font-weight: 500;
+}
 
 
+.button-add-to-cart {
+    background-color: #008e5a; /* Green */
+    border: none;
+    color: white;
+    /*padding: 55px 65px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+}
 
+#input-add-to-cart {
+    /*background-color: #008e5a; !* Green *!*/
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3em;
+    font-weight: 700;
+
+}
+
+#add-to-cart-div {
+    /*position: absolute;*/
+    /*left: 80%;*/
+    /*margin-top: 5%;*/
+}
+
+
+#button-inc_dec {
+    background-color: #008e5a; /* Green */
+    border: none;
+    color: white;
+    padding: 20% 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.5em;
+}
+
+#footer-Order{
+    border-top: 5px solid gray;
+}
+
+#scrollable-div {
+
+    max-height: 80vh;
+    overflow:scroll;
+
+}
+
+.Inc-desc-buttons {
+    /*position: absolute;*/
+    display: flex;
+    justify-content: left;
+
+}
+
+#addToCart {
+    margin-left: 15%;
+    padding: 35px 65px;
+}
+
+#inc_desc {
+    padding: 55px 65px;
+}
