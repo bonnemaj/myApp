@@ -18,6 +18,7 @@ export class ShoppingCart extends React.Component {
                         price={this.props.itemInfo.getIn(List([key, 'price']))}
                         numberOfItems={value}
                         description={'Meaty'}
+                        removeItem={this.props.removeItemFromCart}
                     />
                 )
             }
@@ -43,12 +44,6 @@ export class ShoppingCart extends React.Component {
 }
 
 export class ShoppingCartItem extends React.Component {
-    constructor (props) {
-        super(props);
-
-        
-    }
-
     render () {
         return (
             <div className='order'>
@@ -68,7 +63,7 @@ export class ShoppingCartItem extends React.Component {
                     </div>
                 </div>
                 <div className='OrderammountDiv'>
-                    <button className='OrderammountButton' id='buttonRemove'><span className='glyphicon glyphicon-trash'></span>   Verwijder  Artikel</button>
+                    <button className='OrderammountButton' onClick={() => this.props.removeItem(this.props.title)} id='buttonRemove'><span className='glyphicon glyphicon-trash'></span>   Verwijder  Artikel</button>
                     <input className='OrderammountButton' id='buttonAmmount' value={this.props.numberOfItems} />
                 </div>
             </div>

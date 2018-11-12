@@ -850,6 +850,7 @@ PAYMENT WRAPPER
     margin-right: auto;
     align-content: center;
     height: 35px;
+    cursor: pointer;
 }
 
 .OrderammountDiv {

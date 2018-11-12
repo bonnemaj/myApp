@@ -1,0 +1,165 @@
+/***************************************EMPLOYEE PAGE *****************************************************************/
+
+.employee-header {
+    width:100%;
+    height:20vh;
+    display:flex;
+}
+
+.employee-header__logo {
+    width: 70%;
+}
+
+.employee-header__logo--container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders {
+    display: flex;
+    justify-content: center;
+}
+
+.orders__box {
+    width: 25%;
+    max-height: 38vh;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+
+/* Logo */
+#employee-header{
+    width:100%;
+    height:20vh;
+    display:flex;
+}
+
+#employee-header-logo-div{
+    width:50%;
+}
+
+#employee-header-logo{
+    width: 70%;
+}
+
+#employee-header-pickup-point{
+    margin-top:auto;
+    margin-bottom:auto;
+    width:20%;
+    display: flex;
+    justify-content: center;
+}
+
+#select-pickup-point{
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    width:200px;
+    padding:15px;
+}
+
+
+#logout-button-container{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+#employee-logout{
+    font-size:3em;
+    width:12.5%;
+    margin-right: 2.5%;
+    display:flex;
+    justify-content: flex-end;
+}
+
+/*Footer*/
+#footer {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#copyright {
+    font-size: 2em;
+}
+
+.orderBox {
+    width: 25%;
+    max-height: 38vh;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.orderBoxDiv {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid #000000;
+
+}
+
+th {
+    background: #FF0000;
+    color: white;
+}
+
+
+
+td, th {
+    /*border: 1px solid #dddddd;*/
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+tr {
+    background: #fff;
+}
+
+#th01 {
+    width: 33%;
+}
+
+#th02 {
+    background: #008000;
+}
+
+td {
+    max-width: 10%;
+}
+
+.tdLast {
+    border-bottom: 1px solid #000000;
+}
+
+#td-wide {
+    max-width: 100%;
+}
+
+.orderExtension {
+    width: 25%;
+    max-height: 35vh;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+#trTitle {
+    height: 40px;
+}
+
+#time {
+    position: absolute;
+    left: 87.5%;
+    font-size: 2em;
+}
